@@ -23,7 +23,6 @@
     ],
     "client": [
       "com.augustsextus.gunmod.GunModClient",
-      "com.augustsextus.gunmod.ProjectileTutorialClient"
     ]
   },
   "mixins": [

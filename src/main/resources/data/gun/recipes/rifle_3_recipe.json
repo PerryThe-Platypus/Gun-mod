@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "B# ",
+        "OB "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_block"
+        },
+        "B": {
+            "item": "minecraft:black_concrete"
+        },
+        "O": {
+            "item": "minecraft:oak_log"
+        }
+    },
+    "result": {
+        "item": "gun:rifle_3",
+        "count": 1
+    },
+    "group": "combat"
+}

@@ -1,0 +1,42 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "WW1:texture",
+    "particle": "WW1:texture"
+  },
+  "elements": [
+    {
+      "from": [7, 5, 6],
+      "to": [8, 6, 8],
+      "faces": {
+        "north": {"uv": [2, 4, 3, 5], "texture": "#0"},
+        "east": {"uv": [0, 4, 2, 5], "texture": "#0"},
+        "south": {"uv": [5, 4, 6, 5], "texture": "#0"},
+        "west": {"uv": [3, 4, 5, 5], "texture": "#0"},
+        "up": {"uv": [3, 4, 2, 2], "texture": "#0"},
+        "down": {"uv": [4, 2, 3, 4], "texture": "#0"}
+      }
+    },
+    {
+      "from": [7.1, 5.1, 4.6],
+      "to": [7.9, 5.9, 6],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8.5, 5.5, 7]},
+      "faces": {
+        "north": {"uv": [1, 2.4, 1, 2.4], "texture": "#0"},
+        "east": {"uv": [0, 2.4, 1, 2.4], "texture": "#0"},
+        "south": {"uv": [2, 2.4, 2, 2.4], "texture": "#0"},
+        "west": {"uv": [1, 2.4, 2, 2.4], "texture": "#0"},
+        "up": {"uv": [1, 2.4, 1, 1.4], "texture": "#0"},
+        "down": {"uv": [1, 1.4, 1, 2.4], "texture": "#0"}
+      }
+    }
+  ],
+  "display": {},
+  "groups": [
+    {
+      "name": "bone",
+      "origin": [0, 0, 0],
+      "children": [0, 1]
+    }
+  ]
+}

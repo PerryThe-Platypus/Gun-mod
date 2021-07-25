@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "I# ",
+        "OI "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:oak_planks"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        },
+        "O": {
+            "item": "minecraft:oak_log"
+        }
+    },
+    "result": {
+        "item": "gun:rifle_2",
+        "count": 1
+    },
+    "group": "combat"
+}

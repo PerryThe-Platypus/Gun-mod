@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  _",
+        "PP ",
+        "OI "
+    ],
+    "key": {
+        "_": {
+            "item": "minecraft:polished_andesite_slab"
+        },
+        "P": {
+            "item": "minecraft:polished_andesite"
+        },
+        "O": {
+            "item": "minecraft:oak_log"
+        },
+        "I": {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "item": "gun:handgun_1",
+        "count": 1
+    },
+    "group": "combat"
+}

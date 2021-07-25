@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "_# ",
+        "OS "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_block"
+        },
+        "_": {
+            "item": "minecraft:stone_slab"
+        },
+        "O": {
+            "item": "minecraft:oak_log"
+        },
+        "S": {
+            "item": "minecraft:oak_slab"
+        }
+    },
+    "result": {
+        "item": "gun:rifle_1",
+        "count": 1
+    },
+    "group": "combat"
+}

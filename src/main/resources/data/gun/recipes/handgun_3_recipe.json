@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        "i# ",
+        "Bi "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_block"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "B": {
+            "item": "minecraft:black_concrete"
+        }
+    },
+    "result": {
+        "item": "gun:handgun_3",
+        "count": 1
+    },
+    "group": "combat"
+}

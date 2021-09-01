@@ -1,6 +1,5 @@
 package com.augustsextus.gunmod.registry;
 
-//import com.augustsextus.gunmod.entity.BulletEntity;
 import com.augustsextus.gunmod.GunMod;
 import com.augustsextus.gunmod.entity.BulletEntity;
 //import net.fabricmc.fabric.api.entity.FabricEntityTypeBuilder;
@@ -15,12 +14,13 @@ import net.minecraft.util.registry.Registry;
 
 public class EntityRegistry {
 
+    //creates and builds the bullet
     public static final EntityType<BulletEntity> BulletEntityType = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(GunMod.MOD_ID, "bullet"),
             FabricEntityTypeBuilder.<BulletEntity>create(SpawnGroup.MISC, BulletEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
-                    .trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+                    .trackRangeBlocks(4).trackedUpdateRate(10)
                     .build());
 
     public static void registerEntities() {

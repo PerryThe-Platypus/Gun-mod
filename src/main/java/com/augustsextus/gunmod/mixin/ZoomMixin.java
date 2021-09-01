@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(GameRenderer.class)
 public class ZoomMixin {
 
+    //makes the gun zoom the zoom level providen in "Gun"
     @Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D", at = @At("HEAD"), cancellable = true)
     public void getZoomLevel(CallbackInfoReturnable<Double> callbackInfo) {
         if(GunModClient.isZooming()) {

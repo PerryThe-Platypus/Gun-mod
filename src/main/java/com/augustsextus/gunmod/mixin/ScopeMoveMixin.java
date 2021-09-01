@@ -36,6 +36,7 @@ public class ScopeMoveMixin {
         matrices.translate((double)((float)i * 0.56F), (double)(-0.52F + equipProgress * -0.6F), -0.7200000286102295D);
     }
 
+    //makes the gun be in the middle of the screen on scoping. It is pretty hard to explain but if you dont want to do math just edit some of the values until you see a change
     @Inject(at = @At("HEAD"), method = "renderFirstPersonItem")
     private void renderFirstPersonItem(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
         boolean bl = hand == Hand.MAIN_HAND;

@@ -9,6 +9,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,6 +24,7 @@ public class GunMixin {
     @Shadow ClientPlayerEntity player;
     @Shadow int itemUseCooldown;
 
+    //creates the attack cooldown, sends the shoot packet and cancels the arm movement on left click if the gun is in the players hand
     @Inject(method = "doAttack", at = @At("HEAD"), cancellable = true)
     private void doAttack(CallbackInfo ci) {
         if (this.itemUseCooldown <= 0) {

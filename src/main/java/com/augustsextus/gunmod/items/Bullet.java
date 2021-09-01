@@ -8,4 +8,6 @@ public class Bullet extends Item {
         super(settings);
     }
 
+    //just an item class...
+
 }

@@ -1,7 +1,5 @@
 package com.augustsextus.gunmod;
 
-/*import com.augustsextus.gunmod.client.BulletEntityRenderer;
-import com.augustsextus.gunmod.entity.BulletEntity;*/
 import com.augustsextus.gunmod.items.Gun;
 import com.augustsextus.gunmod.mixin.TickMixin;
 import com.augustsextus.gunmod.registry.EntityRegistry;
@@ -20,8 +18,9 @@ import java.util.UUID;
 
 public class GunModClient implements ClientModInitializer {
 
-    public static final Identifier PacketID = new Identifier(GunMod.MOD_ID, "spawn_packet");
+    public static final Identifier PacketID = new Identifier(GunMod.MOD_ID, "spawn_packet");//identifier
 
+    //some zoom variables
     private static Boolean currentlyZoomed;
     private static Boolean originalSmoothCameraEnabled;
     private static final MinecraftClient mc = MinecraftClient.getInstance();
@@ -66,6 +65,7 @@ public class GunModClient implements ClientModInitializer {
         });
     }
 
+    //some more zoom stuff
     public static Boolean isZooming() {
         return Gun.getIsScoping();
     }

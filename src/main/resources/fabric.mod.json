@@ -4,12 +4,12 @@
   "version": "${version}",
 
   "name": "Gun Mod",
-  "description": "",
+  "description": "A mod that adds guns to Minecraft",
   "authors": [
-    "August Sextus",
+    "August Sextus"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://www.fiverr.com/august921",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
@@ -22,7 +22,7 @@
       "com.augustsextus.gunmod.GunMod"
     ],
     "client": [
-      "com.augustsextus.gunmod.GunModClient",
+      "com.augustsextus.gunmod.GunModClient"
     ]
   },
   "mixins": [

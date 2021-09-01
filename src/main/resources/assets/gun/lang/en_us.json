@@ -1,7 +1,12 @@
 {
   "item.gun.rifle_1": "Lee Enfield",
   "item.gun.bullet": "Bullet",
-  "death.attack.rifle_1": "%1$s was shot by %2$s with a Lee Enfield",
+  "death.attack.rifle_1.player": "%1$s was shot by %2$s with a Lee Enfield",
+  "death.attack.rifle_2.player": "%1$s was shot by %2$s with a Gewehr 98",
+  "death.attack.rifle_3.player": "%1$s was shot by %2$s with a Machinepistolete 18",
+  "death.attack.handgun_1.player": "%1$s was shot by %2$s with a Mauser C96",
+  "death.attack.handgun_2.player": "%1$s was shot by %2$s with a Colt 1911",
+  "death.attack.handgun_3.player": "%1$s was shot by %2$s with a Webley",
   "item.gun.rifle_2": "Gewehr 98",
   "item.gun.rifle_3": "Machinepistolete 18",
   "item.gun.handgun_1": "Mauser C96",

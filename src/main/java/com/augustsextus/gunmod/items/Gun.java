@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleEffect;
@@ -23,11 +24,13 @@ import net.minecraft.world.World;
 
 public class Gun extends Item{
 
+    //all the different variables we can give to the tick mixin
     private static float bulletRangeSpeed;
     private static float damage;
     private static double zoomLevel;
     private static int bulletStackDecrement;
     private static int attackCooldown;
+    private static DamageSource damageSource;
 
     private static Boolean isScoping = false;
     private static int useIndex = 0;
@@ -36,6 +39,7 @@ public class Gun extends Item{
         super(settings);
     }
 
+    //the function for shoot
     public static void shoot(World world, LivingEntity user) {
 
         if (user instanceof PlayerEntity) {
@@ -44,6 +48,7 @@ public class Gun extends Item{
 
             PlayerEntity playerEntity = (PlayerEntity) user;
 
+            //goes through the inventory and checks if there is a bullet stack
             for(int i = 0; i < playerEntity.inventory.size(); ++i) {
                 ItemStack stack = playerEntity.inventory.getStack(i);
                 if (stack.getItem() == ItemRegistry.BULLET) {
@@ -63,11 +68,10 @@ public class Gun extends Item{
                     bulletEntity.setItem(itemStack);
                     bulletEntity.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 0F);
                     world.spawnEntity(bulletEntity); // spawns entity
-                    //sendSmokeSpawnPacket();
-
 
                 }
 
+                //plays explosion sound
                 world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 0.5F, 1F);
                 itemStack.decrement(bulletStackDecrement);
                 if (itemStack.isEmpty()) {
@@ -77,6 +81,7 @@ public class Gun extends Item{
         }
     }
 
+    //we use the "use" to make the scope toggable instead of holding the right click down(We could do that but it causes a bug so you cant shoot while scoping)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (world.isClient()) {
             useIndex++;
@@ -96,6 +101,8 @@ public class Gun extends Item{
         return super.use(world, user, hand);
 
     }
+
+    //the methods to call and set the variables from earlier
 
     public static boolean getIsScoping() {
         return isScoping;
@@ -121,6 +128,10 @@ public class Gun extends Item{
         return attackCooldown;
     }
 
+    public static DamageSource getDamageSource() {
+        return damageSource;
+    }
+
     //:::::::::::::::::::::::::::::::::::::::::::
 
     public static void setBulletRangeSpeed(float bulletRangeSpeed) {
@@ -143,12 +154,12 @@ public class Gun extends Item{
         Gun.attackCooldown = attackCooldown;
     }
 
-    public static void sendShootPacket(){
-        ClientSidePacketRegistry.INSTANCE.sendToServer(GunMod.getShootPacket(), PacketByteBufs.empty());
+    public static void setDamageSource(DamageSource damageSource) {
+        Gun.damageSource = damageSource;
     }
 
-    public static void sendSmokeSpawnPacket(){
-        ClientSidePacketRegistry.INSTANCE.sendToServer(GunMod.getSmokeSpawnPacket(), PacketByteBufs.empty());
+    public static void sendShootPacket(){
+        ClientSidePacketRegistry.INSTANCE.sendToServer(GunMod.getShootPacket(), PacketByteBufs.empty());
     }
 
 }
